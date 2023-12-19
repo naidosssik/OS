@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <unistd.h> 
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <string.h>
 
 int main() {
-    char filename[100];
+    char filename[100]; //не использовать фикс значение
     printf("Введите имя файла для чтения: ");
     fgets(filename, sizeof(filename), stdin);
 
@@ -50,7 +50,7 @@ int main() {
 
         while ((read_bytes = read(fd[0], buffer, sizeof(buffer))) > 0) {
             write(STDOUT_FILENO, buffer, read_bytes);
-            //if(read_bytes != sizeof())
+            
         }
 
         close(fd[0]);
